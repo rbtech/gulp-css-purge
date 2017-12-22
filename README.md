@@ -1,6 +1,6 @@
 
 
-![gulp and CSS-PURGE](https://github.com/rbtech/css-purge/blob/master/assets/images/gulp-css-purge.png)
+![gulp and CSS-PURGE](https://raw.githubusercontent.com/rbtech/css-purge/master/assets/images/gulp-css-purge.png)
 
 
 # Gulp CSS-PURGE
