@@ -1,0 +1,45 @@
+{
+  "name": "gulp-css-purge",
+  "version": "3.0.0",
+  "description": "gulp plugin to purge, burn, reduce, shorten, compress, clean, trim and format duplicate, extra, excess or bloated CSS with CSS-PURGE.",
+  "homepage": "https://github.com/ajkochanowicz/gulp-css-purge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rbtech/gulp-css-purge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rbtech/gulp-css-purge/issues"
+  },
+  "readmeFilename": "README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Quan <andrewq@redblueprint.com> (http://redblueprint.com)",
+  "license": "MIT",
+  "keywords": [
+    "gulpplugin",
+    "CSS-PURGE gulp plugin",
+    "css",
+    "purge",
+    "clean",
+    "minify",
+    "uglify",
+    "duplicate",
+    "deduplicate",
+    "duplicate css",
+    "duplicate rules",
+    "duplicate properties",
+    "purge-css",
+    "minify-css",
+    "gulp-minify-css",
+    "gulp-purge-css",
+    "gulpfriendly"
+  ],
+  "dependencies": {
+    "css-purge": "^3.0.3",
+    "gulp-util": "^3.0.8",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {}
+}
