@@ -1,6 +1,6 @@
 {
   "name": "gulp-css-purge",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "gulp plugin to purge, burn, reduce, shorten, compress, clean, trim and format duplicate, extra, excess or bloated CSS with CSS-PURGE.",
   "homepage": "https://github.com/ajkochanowicz/gulp-css-purge",
   "repository": {
