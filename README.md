@@ -26,7 +26,7 @@ Visit the [CSS-PURGE website](http://rbtech.github.io/css-purge)
 ## Example 1 - Multiple CSS files merged into single CSS file
     var gulp = require('gulp'),
         concat = require('gulp-concat'),
-        purge = require('./index');
+        purge = require('gulp-css-purge');
 
     gulp.task('default', function() {
       return gulp
