@@ -8,7 +8,6 @@ var PluginError = gutil.PluginError;
 const PLUGIN_NAME = 'gulp-css-purge';
 
 var gulpCSSPurge = function(options) {
-  // console.log('options: ', options);
 
   function purgedStream(modifiedCSS) {
 
@@ -16,17 +15,21 @@ var gulpCSSPurge = function(options) {
   }
 
   return through.obj(function(file, encoding, callback){
+    
+    if (options !== undefined && (options.reduceConfig !== undefined || options.reduceConfig !== null)) {
+      delete options.reduceConfig;
+    }
 
     if (file.isNull()) {
       return callback(null, file);
     }
 
     if (file.isStream()) {
-
+      var fileContents = file.contents ? file.contents.toString() : '';
       cssPurge.purgeCSS(fileContents, options, function(error, results){
 
         if (error) {
-          return cb(new gutil.PluginError(PLUGIN_NAME, error));
+          return callback(new gutil.PluginError(PLUGIN_NAME, error));
         }
 
         file.contents = file.contents.pipe(purgedStream(results));
@@ -36,12 +39,7 @@ var gulpCSSPurge = function(options) {
 
     } else if (file.isBuffer()) {
 
-
-      var fileContents = file.contents.toString();
-      if (!fileContents.length) {
-        // Don't crash on empty files
-        return callback(null, file);
-      }
+      var fileContents = file.contents ? file.contents.toString() : '';
 
       //default options
       if (options === null || options === undefined) {
@@ -55,15 +53,16 @@ var gulpCSSPurge = function(options) {
         cssPurge.purgeCSS(fileContents, options, function(error, results){
 
           if (error) {
-            return cb(new gutil.PluginError(PLUGIN_NAME, error));
+            return callback(new gutil.PluginError(PLUGIN_NAME, error));
           }
-
           file.contents = new Buffer(results);
           callback(null, file);
         });
       } catch (error) {
-        return cb(new gutil.PluginError(PLUGIN_NAME, error));
+        return callback(new gutil.PluginError(PLUGIN_NAME, error));
       }
+
+
     }
 
   });

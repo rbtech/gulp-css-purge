@@ -23,15 +23,15 @@ npm install gulp-css-purge --save-dev
 Visit the [CSS-PURGE website](http://rbtech.github.io/css-purge)
 
 
-## Example 1 - Multiple CSS files merged into single CSS file
+## Example 1 - Multiple CSS files merged into single CSS file - [Working Example](https://github.com/rbtech/gulp-css-purge-example)
     var gulp = require('gulp'),
         concat = require('gulp-concat'),
-        purge = require('./index');
+        purge = require('gulp-css-purge');
 
     gulp.task('default', function() {
       return gulp
             .src(['./**/*.css']) //input css
-            .pipe(concat('main.css')) //merge into single css file
+            .pipe(concat('main.css')) //merge into single css file - remove if you want to process output into separate files
             .pipe(purge({
                 trim : true,
                 shorten : true,
