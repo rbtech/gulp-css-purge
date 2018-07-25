@@ -37,7 +37,7 @@
     "gulpfriendly"
   ],
   "dependencies": {
-    "css-purge": "^3.0.4",
+    "css-purge": "~3",
     "gulp-util": "^3.0.8",
     "through2": "^2.0.3"
   },
