@@ -44,8 +44,12 @@ var gulpCSSPurge = function(options) {
       //default options
       if (options === null || options === undefined) {
         options = {
-          trim : true,
-          shorten : true
+          "trim" : true,
+
+          "shorten" : true,
+
+          "format_font_family": true
+
         };
       }
 
